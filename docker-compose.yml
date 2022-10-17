@@ -1,38 +1,38 @@
 version: '3.5'
 
 services:
-  # db:
-  #   image: mysql
-  #   container_name: wodbox-mysql
-  #   ports:
-  #     - 33061:3306
-  #   environment:
-  #     MYSQL_DATABASE: 'kodbox'   
-  #     MYSQL_USER: 'mysql'
-  #     MYSQL_PASSWORD: 'adminpwd'      
-  #     MYSQL_ROOT_PASSWORD: 'adminpwd'
-  #   volumes:
-  #     - ./mysql:/var/lib/mysql:rw
-  #   user: mysql
-  #   restart: always
-  mariadb:
-    image: mariadb
-    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
-    volumes:
-      - "./mariadb:/var/lib/mysql"       #./db是数据库持久化目录，可以修改
+  db:
+    image: mysql
+    container_name: wodbox-mysql
+    ports:
+      - 33061:3306
     environment:
-      - "TZ=Asia/Shanghai"
-      - "MYSQL_ROOT_PASSWORD=adminpwd"
-      - "MYSQL_DATABASE=kodbox"
-      - "MYSQL_USER=mysql"
-      - "MYSQL_PASSWORD=adminpwd"
+      MYSQL_DATABASE: 'kodbox'   
+      MYSQL_USER: 'mysql'
+      MYSQL_PASSWORD: 'adminpwd'      
+      MYSQL_ROOT_PASSWORD: 'adminpwd'
+    volumes:
+      - ./mysql:/var/lib/mysql:rw
+    user: mysql
     restart: always
+  # mariadb:
+  #   image: mariadb
+  #   command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+  #   volumes:
+  #     - "./mariadb:/var/lib/mysql"       #./db是数据库持久化目录，可以修改
+  #   environment:
+  #     - "TZ=Asia/Shanghai"
+  #     - "MYSQL_ROOT_PASSWORD=adminpwd"
+  #     - "MYSQL_DATABASE=kodbox"
+  #     - "MYSQL_USER=mysql"
+  #     - "MYSQL_PASSWORD=adminpwd"
+  #   restart: always
   app:
     image: kodcloud/kodbox
     ports:
       - 8888:80                       #左边80是使用端口，可以修改
     links:
-      - db
+      # - db
       - redis
       - mariadb
     volumes:

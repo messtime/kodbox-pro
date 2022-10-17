@@ -21,14 +21,14 @@ $config['settings']['updload']['Threads'] = 15;
 
 // $config['settings']['upload']['chunkSize'] = 1024*1024*5;
 
-$config['database'] = array (
-  'DB_TYPE' => 'mysqli',
-  'DB_NAME' => 'kodbox',
-  'DB_HOST' => 'mariadb',
-  'DB_PORT' => 3306,
-  'DB_USER' => 'root',
-  'DB_PWD' => 'adminpwd',
-  'DB_SQL_LOG' => true,
-  'DB_FIELDS_CACHE' => true,
-  'DB_SQL_BUILD_CACHE' => false,
-);
+// $config['database'] = array (
+//   'DB_TYPE' => 'mysqli',
+//   'DB_NAME' => 'kodbox',
+//   'DB_HOST' => 'mariadb',
+//   'DB_PORT' => 3306,
+//   'DB_USER' => 'root',
+//   'DB_PWD' => 'adminpwd',
+//   'DB_SQL_LOG' => true,
+//   'DB_FIELDS_CACHE' => true,
+//   'DB_SQL_BUILD_CACHE' => false,
+// );

@@ -3,6 +3,6 @@ site/data
 site/app
 site/plugins
 site/static
-mysql-1
+mysqlBackup
 .history
-aria_log.0*
+
