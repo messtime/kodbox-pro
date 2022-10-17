@@ -4,3 +4,5 @@ site/app
 site/plugins
 site/static
 mysql
+.history
+aria_log.0*
