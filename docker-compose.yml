@@ -1,20 +1,20 @@
 version: '3.5'
 
 services:
-  db:
-    image: mysql
-    container_name: wodbox-mysql
-    ports:
-      - 33061:3306
-    environment:
-      MYSQL_DATABASE: 'kodbox'   
-      MYSQL_USER: 'mysql'
-      MYSQL_PASSWORD: 'adminpwd'      
-      MYSQL_ROOT_PASSWORD: 'adminpwd'
-    volumes:
-      - ./mysql:/var/lib/mysql:rw
-    user: mysql
-    restart: always
+  # db:
+  #   image: mysql
+  #   container_name: wodbox-mysql
+  #   ports:
+  #     - 33061:3306
+  #   environment:
+  #     MYSQL_DATABASE: 'kodbox'   
+  #     MYSQL_USER: 'mysql'
+  #     MYSQL_PASSWORD: 'adminpwd'      
+  #     MYSQL_ROOT_PASSWORD: 'adminpwd'
+  #   volumes:
+  #     - ./mysql:/var/lib/mysql:rw
+  #   user: mysql
+  #   restart: always
   mariadb:
     image: mariadb
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
