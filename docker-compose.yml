@@ -2,24 +2,25 @@ version: '3.5'
 
 services:
   # db:
-  #   image: mysql
-  #   container_name: wodbox-mysql
-  #   ports:
-  #     - 33061:3306
-  #   environment:
-  #     MYSQL_DATABASE: 'kodbox'   
-  #     MYSQL_USER: 'mysql'
-  #     MYSQL_PASSWORD: 'adminpwd'      
-  #     MYSQL_ROOT_PASSWORD: 'adminpwd'
-  #   volumes:
-  #     - ./mysql:/var/lib/mysql:rw
-  #   user: mysql
-  #   restart: always
+    # image: mysql
+    # container_name: wodbox-mysql
+    # ports:
+    #   - 33061:3306
+    # environment:
+    #   MYSQL_DATABASE: 'kodbox'   
+    #   MYSQL_USER: 'mysql'
+    #   MYSQL_PASSWORD: 'adminpwd'      
+    #   MYSQL_ROOT_PASSWORD: 'adminpwd'
+    # volumes:
+    #   - ./mysql:/var/lib/mysql:rw
+    # user: mysql
+    # restart: always
   mariadb:
     image: mariadb
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
     volumes:
-      - "./mariadb:/var/lib/mysql"       #./db是数据库持久化目录，可以修改
+      # - "/Volumes/ExFATslw/docker/mariadb:/var/lib/mysql"       #./db是数据库持久化目录，可以修改
+      - ./mariadb:/var/lib/mysql
     environment:
       - "TZ=Asia/Shanghai"
       - "MYSQL_ROOT_PASSWORD=adminpwd"
@@ -32,11 +33,11 @@ services:
     ports:
       - 8888:80                       #左边80是使用端口，可以修改
     links:
-      - db
+      # - db
       - redis
       - mariadb
     volumes:
-      - "./site:/var/www/html"      #./site是站点目录位置，可以修改
+      - "/Volumes/ExFATslw/docker/kod-site:/var/www/html"      #./site是站点目录位置，可以修改
       - "./nginx:/etc/nginx"      #./site是站点目录位置，可以修改
       - "./etc:/usr/local/etc"      #./site是站点目录位置，可以修改
     restart: always
