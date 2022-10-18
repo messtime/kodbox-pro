@@ -11,7 +11,7 @@ define('GLOBAL_DEBUG_LOG_ALL',0);//0 or 1
 @set_time_limit(3600);//60min pathInfoMuti,search,upload,download...
 @ini_set("max_execution_time",3600);//3600
 @ini_set('request_terminate_timeout', 3600);
-@ini_set('memory_limit','1024M');//
+@ini_set('memory_limit','4096M');//
 @ini_set('session.cache_expire',1800);
 
 @ini_set('date.timezone', 'Asia/Shanghai');

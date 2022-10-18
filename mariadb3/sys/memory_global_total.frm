@@ -1,0 +1,16 @@
+TYPE=VIEW\r
+query=select `sys`.`format_bytes`(sum(`performance_schema`.`memory_summary_global_by_event_name`.`CURRENT_NUMBER_OF_BYTES_USED`)) AS `total_allocated` from `performance_schema`.`memory_summary_global_by_event_name`\r
+md5=8082fddb38d6165c0d33b88815ddf3d8\r
+updatable=0\r
+algorithm=2\r
+definer_user=mariadb.sys\r
+definer_host=localhost\r
+suid=0\r
+with_check_option=0\r
+timestamp=2022-10-16 16:26:44\r
+create-version=2\r
+source=SELECT sys.format_bytes(SUM(CURRENT_NUMBER_OF_BYTES_USED)) total_allocated\n  FROM performance_schema.memory_summary_global_by_event_name;\r
+client_cs_name=utf8mb3\r
+connection_cl_name=utf8mb3_general_ci\r
+view_body_utf8=select `sys`.`format_bytes`(sum(`performance_schema`.`memory_summary_global_by_event_name`.`CURRENT_NUMBER_OF_BYTES_USED`)) AS `total_allocated` from `performance_schema`.`memory_summary_global_by_event_name`\r
+mariadb-version=100903\r

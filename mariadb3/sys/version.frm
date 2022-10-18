@@ -1,0 +1,16 @@
+TYPE=VIEW\r
+query=select \'1.5.1\' AS `sys_version`,version() AS `mysql_version`\r
+md5=91a844b992f5531ded209bb44c10bae7\r
+updatable=0\r
+algorithm=0\r
+definer_user=mariadb.sys\r
+definer_host=localhost\r
+suid=0\r
+with_check_option=0\r
+timestamp=2022-10-16 16:26:43\r
+create-version=2\r
+source=SELECT \'1.5.1\' AS sys_version,\n        version() AS mysql_version;\r
+client_cs_name=utf8mb3\r
+connection_cl_name=utf8mb3_general_ci\r
+view_body_utf8=select \'1.5.1\' AS `sys_version`,version() AS `mysql_version`\r
+mariadb-version=100903\r
