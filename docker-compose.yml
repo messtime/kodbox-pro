@@ -39,6 +39,7 @@ services:
       - mariadb
     volumes:
       - "/Volumes/ExFATslw/docker/kodboxpro/site:/var/www/html"      #./site是站点目录位置，可以修改
+      - "/Volumes/ExFATslw/kodboxFile:/var/www/kodboxFile"
       - "./nginx:/etc/nginx"      #./site是站点目录位置，可以修改
       - "./etc:/usr/local/etc"      #./site是站点目录位置，可以修改
     restart: always
